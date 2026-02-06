@@ -24,7 +24,7 @@ Effect: Accesses ftp endpoint
 Payload 2: `http://[JuiceshopIP:port]/ftp/[pathtoexposedfile]%2500.md`  
 Effect: Accesses an exposed file  
 
-Example `http://[JuiceshopIP:Port]/ftp/coupons_2013.md.bakx%2500.md`  
+Example `http://[JuiceshopIP:Port]/ftp/coupons_2013.md.bak%2500.md`  
 
 
 **Steps to Reproduce**:  
