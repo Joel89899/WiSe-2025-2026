@@ -32,8 +32,9 @@ Reverse shell payload for complete system compromise:
 
 Steps to Reproduce:
 
-Navigate to the ping functionality page on the shell-inject machine's web interface
+1. Navigate to the ping functionality page on the shell-inject machine's web interface
 
+<img width="1379" height="562" alt="poc 1" src="https://github.com/user-attachments/assets/5ca77d88-2a24-4e6d-8b87-54ac025a749b" />
 
 2. Enter a legitimate IP address (e.g., 127.0.0.1 or 8.8.8.8) in the IP address input field and submit the form
 
