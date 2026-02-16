@@ -1,0 +1,50 @@
+CVE-ID: EDU-JUICESHOP-2026-T06-001
+
+Title: Authentication Bypass via SQL Injection in OWASP Juice Shop
+
+Affected Lab: OWASP Juice Shop | Container: websploit-juice-shop | Port: 3000
+
+Component: User Authentication Module
+
+Severity: Critical
+
+CVSS Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+
+CVSS Score: 9.8
+
+Description:
+The login functionality of the OWASP Juice Shop application is vulnerable to SQL Injection. The application fails to properly sanitize the email input field before incorporating it into a backend SQL query. An unauthenticated attacker can supply specially crafted SQL syntax to manipulate the query logic. By using a tautology (e.g., ' or 1=1--), the attacker can bypass password verification and authenticate as the first user in the database (typically the administrator) without a valid password.
+
+Proof of Concept:
+
+Target URL: http://10.6.6.12:3000/#/login
+
+Payload (Email): ' or 1=1--
+
+Password: Any arbitrary string
+
+Result: The SQL query becomes something like SELECT * FROM Users WHERE email = '' OR 1=1--' AND password = '...'. Since 1=1 is always true and -- comments out the rest of the query, the application logs the attacker in as the administrator.
+
+Steps to Reproduce:
+
+1. Open juice-shop using the following url : http://10.6.6.12:3000
+
+2. Go to the login section
+
+3. Enter ' or 1=1-- in the email/username section and enter a random password
+
+4. You are now logged in
+
+Remediation:
+
+1. Parameterized Queries: Use prepared statements (with parameterized queries) for all database access to ensure input is treated as data, not executable code.
+
+2. Input Validation: Implement a strict allowlist for email formats.
+
+3. ORM Security: Use secure settings in Object-Relational Mapping (ORM) frameworks like Sequelize (which Juice Shop uses) to avoid raw queries.
+
+4. Principle of Least Privilege: Ensure the database user has minimal permissions required for the application to function.
+
+Discovered By: Team 6
+
+Date: 3 February 2026
