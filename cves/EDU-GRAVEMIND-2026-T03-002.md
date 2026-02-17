@@ -11,9 +11,10 @@
 The vsftpd service on gravemind permits anonymous FTP login with unrestricted read access to sensitive files. The file `supersecretfile.txt` contains a hard-coded plaintext password ("password") that may be reused for SSH, SMB, or web application authentication on this host, enabling privilege escalation and lateral movement.
 
 **Proof of Concept**:  
-<img src="image-3.png" alt="nmap scan" width="800">
 
-<img src="image-4.png" alt="ftp file access" width="800">
+<img width="800" height="582" alt="image-3" src="https://github.com/user-attachments/assets/cea1d7e8-6ccc-40ad-9cca-a6f3e91018c8" />
+
+<img width="800" height="702" alt="image-4" src="https://github.com/user-attachments/assets/d824e436-b3d2-4f02-a0e6-f3d40f13c59a" />
 
 Payload 1: `nmap -sV -sC -T5 -p- [gravemindIP]`  
 Effect: scans IP and test vulnerability scripts, detect versions on all open ports with insane speed
