@@ -15,12 +15,12 @@ The GraphQL endpoint lacks authentication controls and has introspection enabled
 4. Retrieve any user's private information by ID
 
 **Proof of Concept**:  
-<img src="image-6.png" alt="user enum" width="800">
 
-<img src="image-7.png" alt="get fields" width="800">
+<img width="700" height="509" alt="image-6" src="https://github.com/user-attachments/assets/c235bf0f-b79d-4d04-9988-2595863fd46f" />
 
-<img src="image-8.png" alt="get api token" width="800">
+<img width="700" height="1047" alt="image-7" src="https://github.com/user-attachments/assets/be4f51f0-db16-46dd-9a92-f526cec96a72" />
 
+<img width="700" height="321" alt="image-8" src="https://github.com/user-attachments/assets/249efe34-106b-4359-9af5-8d35deee0416" />
 
 Payload : commands on graphql interface as seen in proof of concept  
 
