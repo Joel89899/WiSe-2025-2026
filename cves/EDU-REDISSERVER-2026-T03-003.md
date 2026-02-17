@@ -12,8 +12,8 @@ Redis server version 5.0.7 lacks authentication and critically runs as **root** 
 
 
 **Proof of Concept**:  
-<img src="image-5.png" alt="exploitaion with msfconsole" width="800">
 
+<img width="800" height="591" alt="image-5" src="https://github.com/user-attachments/assets/f9bc1ac9-b0ea-4daf-9082-09ba6f1d1f8e" />
 
 Payload : on msf console use payload `linux/x64/meterpreter/reverse_tcp`  
 
